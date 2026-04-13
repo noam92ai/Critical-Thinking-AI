@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Think Before You Prompt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── ONBOARDING SCREEN ── -->
+  <div id="onboarding-screen" class="screen active">
+    <div class="onboarding-inner">
+      <div class="onboarding-icon">🧠</div>
+      <h1>Think Before You Prompt</h1>
+      <p class="onboarding-sub">
+        A 5-lesson crash course on critical thinking when using AI.<br>
+        Swipe. React. Discuss.
+      </p>
+      <input
+        id="username-input"
+        type="text"
+        placeholder="Enter your name…"
+        autocomplete="off"
+        maxlength="30"
+      />
+      <button id="start-btn" disabled>Start Learning →</button>
+      <p class="onboarding-hint">5 lessons · ~3 min each · Swipe to navigate</p>
+    </div>
+  </div>
+
+  <!-- ── MAIN FEED ── -->
+  <div id="feed-screen" class="screen">
+
+    <!-- Progress dots (top) -->
+    <div id="progress-dots"></div>
+
+    <!-- Lesson label + view count (below dots) -->
+    <div id="lesson-bar">
+      <span id="lesson-label">Lesson 1 of 5</span>
+      <span id="view-count">👁️ 0 views</span>
+    </div>
+
+    <!-- Reel container (slides vertically) -->
+    <div id="reel-container"></div>
+
+    <!-- Desktop nav buttons -->
+    <div id="nav-buttons">
+      <button id="btn-prev" class="nav-btn" disabled>↑ Prev</button>
+      <button id="btn-next" class="nav-btn">↓ Next</button>
+    </div>
+
+  </div>
+
+  <!-- ── COMMENTS DRAWER (bottom sheet) ── -->
+  <div id="comments-overlay" class="hidden">
+    <div id="comments-drawer">
+      <div id="comments-header">
+        <span id="comments-title">Comments (0)</span>
+        <button id="comments-close">×</button>
+      </div>
+      <div id="comments-list"></div>
+      <div id="comments-input-row">
+        <input id="comment-input" type="text" placeholder="Add a comment…" maxlength="200" />
+        <button id="comment-send">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── END-OF-VIDEO OVERLAY ── -->
+  <div id="end-overlay" class="hidden">
+    <div id="end-inner">
+      <p id="end-eyebrow">What did others think?</p>
+      <h2 id="end-title"></h2>
+      <div id="end-reactions"></div>
+      <div id="end-comments"></div>
+      <button id="end-continue"></button>
+    </div>
+  </div>
+
+  <!-- ── REACTION BURST LAYER ── -->
+  <div id="burst-layer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
